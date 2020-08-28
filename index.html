@@ -151,6 +151,100 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-collect" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/28/collect/">collect</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/28/collect/" class="archive-article-date">
+  	<time datetime="2020-08-28T12:57:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="有用的网址"><a href="#有用的网址" class="headerlink" title="有用的网址"></a>有用的网址</h2><p>收藏有用的网址</p>
+<h3 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h3><ul>
+<li>一个不错的x86汇编博客 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/chengmf/tag/Assembly/default.html?page=1">Assembly</a></li>
+<li>一个<a target="_blank" rel="noopener" href="http://crva.ict.ac.cn/documents/RISC-V-Reader-Chinese-v2p1.pdf">RISC-V手册</a> pdf</li>
+<li>一个颜色获取网站<a target="_blank" rel="noopener" href="https://colorhunt.co/">Clolor Hunt</a></li>
+</ul>
+<h3 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h3><p>记录开发,生活相关</p>
+<ul>
+<li>图床 目前使用的<a target="_blank" rel="noopener" href="https://sm.ms/">sm.ms</a><ul>
+<li>简书 推荐图床 <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/ea1eb11db63f">markdown图库</a></li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://www.css-js.com/tools/base64.html">图片转Base64</a> </li>
+</ul>
+<h3 id="兴趣其他"><a href="#兴趣其他" class="headerlink" title="兴趣其他"></a>兴趣其他</h3><p>一些奇奇怪怪的网站</p>
+<ul>
+<li>外网服务器 <a target="_blank" rel="noopener" href="https://pacificrack.com/portal/clientarea.php">pacificrack</a></li>
+<li>域名注册 <a target="_blank" rel="noopener" href="https://www.namesilo.com/">NameSilo</a></li>
+<li>飞机航线 <a target="_blank" rel="noopener" href="https://zh.flightaware.com/">FlightAware</a></li>
+<li></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">collect</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/28/collect/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-idea-shortcuts" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -175,6 +269,14 @@
 <li>ctrl + alt + v 自动补齐</li>
 <li>ctrl + alt + 左方向键   回到光标的上一个位置</li>
 <li>ctrl + alt + T 快速调出try/catch 代码块</li>
+<li>ctrl + D 复制光标所在行,并复制到下一行</li>
+<li>ctrl + Y 删除光标所在行</li>
+<li>ctrl + W 递进式选择代码块</li>
+<li>ctrl + E 显示最近打开的文件记录列表</li>
+<li>ctrl + N 根据输入的<strong>类名</strong>查找类文件</li>
+<li>ctrl + G 在当前文件跳转至指定行</li>
+<li>ctrl + J 插入自定义动态代码模板</li>
+<li></li>
 </ul>
 
       
@@ -286,9 +388,29 @@
 <li>Lock 使用的是Condition类中的 await()等待,和signalAll()唤醒,等待也需要在while中</li>
 <li>若想实现 让多个方法有序执行,需要借助多个Condition</li>
 </ul>
-<h2 id="八锁现象"><a href="#八锁现象" class="headerlink" title="八锁现象"></a>八锁现象</h2><ul>
-<li></li>
+<h2 id="八锁现象"><a href="#八锁现象" class="headerlink" title="八锁现象"></a>八锁现象</h2><p>​    实际上,并不是八锁,只是用于理解线程执行的过程</p>
+<ul>
+<li>当多个线程内执行同一对象的不同普通方法时,使用的是同一把锁(一个对象),谁先拿到谁执行.</li>
+<li>多个线程内执行不同对象的普通方法时,则各自锁不相同,互不影响.</li>
+<li>当线程内执行的方法是静态(static)方法时,当前线程的锁是类(class 唯一),与对象无关</li>
 </ul>
+<h2 id="集合不安全"><a href="#集合不安全" class="headerlink" title="集合不安全"></a>集合不安全</h2><h3 id="CopyOnWriteArrayList"><a href="#CopyOnWriteArrayList" class="headerlink" title="CopyOnWriteArrayList"></a>CopyOnWriteArrayList</h3><p>当多个线程同时调用ArrayList()的方法时,会有线程不安全的风险, 以前的时候有个Vector(线程安全),可以解决,但由于执行效率低,现在使用的是CopyOnWriteArrayList</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> CopyOnWriteArrayList();</span><br></pre></td></tr></table></figure>
+
+<h3 id="CopyOnWriteArraySet"><a href="#CopyOnWriteArraySet" class="headerlink" title="CopyOnWriteArraySet"></a>CopyOnWriteArraySet</h3><p>当多个线程同时执行HashSet()的方法时,也会有线程不安全风险,一般会报<code>ConcurrentModificationException</code> ,可以使用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set&lt;String&gt; set = Collections.synchronizedSet(<span class="keyword">new</span> HashSet&lt;&gt;());</span><br></pre></td></tr></table></figure>
+
+<p>现在一般使用CopyOnWriteArraySet</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set&lt;String&gt; set = <span class="keyword">new</span> CopyOnWriteArraySet&lt;&gt;();</span><br></pre></td></tr></table></figure>
+
+<h3 id="ConcurrentHashMap"><a href="#ConcurrentHashMap" class="headerlink" title="ConcurrentHashMap"></a>ConcurrentHashMap</h3><p>当多线程执行hashMap()的方法,线程不安全, 可以使用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, String&gt; map = Collections.synchronizedMap(<span class="keyword">new</span> HashMap&lt;String,String&gt;());</span><br></pre></td></tr></table></figure>
+
+<p>现在一般使用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, String&gt; map = <span class="keyword">new</span> ConcurrentHashMap&lt;&gt;();</span><br></pre></td></tr></table></figure>
+
+
+
 
       
 
@@ -456,6 +578,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">并发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">collect</a>
               </li>
             
             <div class="clearfix"></div>

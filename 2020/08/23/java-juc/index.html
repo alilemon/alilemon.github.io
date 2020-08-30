@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://alilemon.github.io">
   <title>JUC并发编程 | Alilemon&#39;Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="基础知识回顾 java 默认有两个线程，main主线程和 GC垃圾回收 线程的六个状态 NEW  新生 RUNNABLE  运行 BLOCKED  阻塞 WAITING  等待,一直等 TIMED_WAITING  超时等待 TERMINATED  终止   wait&#x2F;sleep的区别 来自不同类, wait&#x3D;&gt;Object , sleep&#x3D;&gt;Thread 关于锁的释放, wait 会">
+  <meta name="description" content="基础知识回顾 java 默认有两个线程，main主线程和 GC垃圾回收  线程的六个状态  NEW  新生 RUNNABLE  运行 BLOCKED  阻塞 WAITING  等待,一直等 TIMED_WAITING  超时等待 TERMINATED  终止   wait&#x2F;sleep的区别  来自不同类, wait&#x3D;&gt;Object , sleep&#x3D;&gt;Thread 关于锁的释放, wai">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JUC并发编程">
 <meta property="og:url" content="https://alilemon.github.io/2020/08/23/java-juc/index.html">
 <meta property="og:site_name" content="Alilemon&#39;Blog">
-<meta property="og:description" content="基础知识回顾 java 默认有两个线程，main主线程和 GC垃圾回收 线程的六个状态 NEW  新生 RUNNABLE  运行 BLOCKED  阻塞 WAITING  等待,一直等 TIMED_WAITING  超时等待 TERMINATED  终止   wait&#x2F;sleep的区别 来自不同类, wait&#x3D;&gt;Object , sleep&#x3D;&gt;Thread 关于锁的释放, wait 会">
+<meta property="og:description" content="基础知识回顾 java 默认有两个线程，main主线程和 GC垃圾回收  线程的六个状态  NEW  新生 RUNNABLE  运行 BLOCKED  阻塞 WAITING  等待,一直等 TIMED_WAITING  超时等待 TERMINATED  终止   wait&#x2F;sleep的区别  来自不同类, wait&#x3D;&gt;Object , sleep&#x3D;&gt;Thread 关于锁的释放, wai">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-23T10:42:24.000Z">
-<meta property="article:modified_time" content="2020-08-29T14:42:12.803Z">
+<meta property="article:modified_time" content="2020-08-30T00:46:08.725Z">
 <meta property="article:author" content="Alilemon">
 <meta property="article:tag" content="java">
 <meta property="article:tag" content="juc">
@@ -50,7 +50,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="https://i.loli.net/2020/08/24/2gWGPejDRTSFL7f.jpg" class="js-avatar">
+			<img src="/img/head.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/"></a></h1>
@@ -106,7 +106,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="https://i.loli.net/2020/08/24/2gWGPejDRTSFL7f.jpg" class="js-avatar">
+				<img src="/img/head.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author"></h1>
@@ -174,8 +174,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="基础知识回顾"><a href="#基础知识回顾" class="headerlink" title="基础知识回顾"></a>基础知识回顾</h2><ul>
-<li>java 默认有两个线程，main主线程和 GC垃圾回收</li>
-<li>线程的六个状态<ol>
+<li><p>java 默认有两个线程，main主线程和 GC垃圾回收</p>
+</li>
+<li><p>线程的六个状态</p>
+<ol>
 <li>NEW  新生</li>
 <li>RUNNABLE  运行</li>
 <li>BLOCKED  阻塞</li>
@@ -184,12 +186,15 @@
 <li>TERMINATED  终止</li>
 </ol>
 </li>
-<li>wait/sleep的区别<ol>
+<li><p>wait/sleep的区别</p>
+<ol>
 <li>来自不同类, wait=&gt;Object , sleep=&gt;Thread</li>
 <li>关于锁的释放, wait 会释放锁, sleep 抱锁,不释放</li>
 <li>使用范围不同, wait 必须在同步代码块中, sleep 可以在任何地方</li>
 <li>师傅捕获异常, wait 不需要, sleep 需要</li>
 </ol>
+<a id="more"></a>
+
 </li>
 </ul>
 <h2 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h2><ul>
@@ -660,7 +665,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">&lt;br&gt;&lt;br&gt;记录一下,生活点点滴滴&lt;br&gt;</div>
   	  	
     	</section>
     

@@ -151,6 +151,107 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-java-annotation-refect" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/06/java-annotation-refect/">注解和反射</a>
+    </h1>
+  
+
+        
+        <a href="/2020/09/06/java-annotation-refect/" class="archive-article-date">
+  	<time datetime="2020-09-06T07:51:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Annotation-注解"><a href="#Annotation-注解" class="headerlink" title="Annotation 注解"></a>Annotation 注解</h2><h2 id="Refection-反射"><a href="#Refection-反射" class="headerlink" title="Refection 反射"></a>Refection 反射</h2><p> 获取类的Class 对象 三种方式</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//通过Class类加载 (推荐)</span></span><br><span class="line">Class aClass = Class.forName(<span class="string">&quot;com.alilemon.reject.User&quot;</span>);</span><br><span class="line"><span class="comment">//通过对象加载</span></span><br><span class="line">Class userClass = User.class;</span><br><span class="line"><span class="comment">//通过对象的引用加载</span></span><br><span class="line">User user = <span class="keyword">new</span> User();</span><br><span class="line">Class aClass1 = user.getClass();</span><br><span class="line"><span class="comment">//内置基本数据类型可以直接用类名.Type</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="类加载"><a href="#类加载" class="headerlink" title="类加载"></a>类加载</h2><p>类在加载过程</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        staticTest1 staticTest1 = <span class="keyword">new</span> staticTest1();</span><br><span class="line">        System.out.println(staticTest1.m);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">staticTest1</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> m = <span class="number">100</span>;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;静态代码块&quot;</span>);</span><br><span class="line">        m=<span class="number">300</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">staticTest1</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;构造函数&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**执行结果</span></span><br><span class="line"><span class="comment">静态代码块</span></span><br><span class="line"><span class="comment">构造函数</span></span><br><span class="line"><span class="comment">300</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>对于上面函数,如果静态代码块和static int 替换位置,则m就会等于100</p>
+</blockquote>
+<pre><code>### 类的初始化</code></pre>
+<p>类的主动引用</p>
+<ul>
+<li>当虚拟机启动,先初始化main方法所在的类</li>
+<li>new一个类的对象</li>
+<li>调用类的静态成员(除了final常量)和静态方法</li>
+<li>使用java.lang.reflect包中的方法对类进行反射调用</li>
+<li>当初始化一个类,如果其中父类没有被初始化,则先会初始化它的父类</li>
+</ul>
+<p>类的被动引用(不会发生类的初始化)</p>
+<ul>
+<li>当访问一个静态域时,只有真正声明这个域的类才会被初始化.例如:当通过子类引用父类的静态变量,不会导致子类初始化.</li>
+<li>通过数组定义类引用,不会触发</li>
+<li>引用常量不会触发 此类的初始化(常量在链接阶段就存入调用类的常量池中了)</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">refect</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/09/06/java-annotation-refect/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-collect" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -519,11 +620,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">idea</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color2">refect</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">idea</a>
               </li>
              
               <li class="article-tag-list-item">

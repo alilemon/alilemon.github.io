@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://alilemon.github.io">
   <title>注解和反射 | Alilemon&#39;Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Annotation 注解Refection 反射 获取类的Class 对象 三种方式 12345678&#x2F;&#x2F;通过Class类加载 (推荐)Class aClass &#x3D; Class.forName(&quot;com.alilemon.reject.User&quot;);&#x2F;&#x2F;通过对象加载Class userClass &#x3D; User.class;&#x2F;&#x2F;通过对象的引用加载User user &#x3D; new">
+  <meta name="description" content="Annotation 注解">
 <meta property="og:type" content="article">
 <meta property="og:title" content="注解和反射">
 <meta property="og:url" content="https://alilemon.github.io/2020/09/06/java-annotation-refect/index.html">
 <meta property="og:site_name" content="Alilemon&#39;Blog">
-<meta property="og:description" content="Annotation 注解Refection 反射 获取类的Class 对象 三种方式 12345678&#x2F;&#x2F;通过Class类加载 (推荐)Class aClass &#x3D; Class.forName(&quot;com.alilemon.reject.User&quot;);&#x2F;&#x2F;通过对象加载Class userClass &#x3D; User.class;&#x2F;&#x2F;通过对象的引用加载User user &#x3D; new">
+<meta property="og:description" content="Annotation 注解">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-09-06T07:51:05.000Z">
-<meta property="article:modified_time" content="2020-09-12T08:17:13.090Z">
+<meta property="article:modified_time" content="2020-09-12T14:48:17.004Z">
 <meta property="article:author" content="Alilemon">
 <meta property="article:tag" content="java">
 <meta property="article:tag" content="refect">
@@ -172,7 +172,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Annotation-注解"><a href="#Annotation-注解" class="headerlink" title="Annotation 注解"></a>Annotation 注解</h2><h2 id="Refection-反射"><a href="#Refection-反射" class="headerlink" title="Refection 反射"></a>Refection 反射</h2><p> 获取类的Class 对象 三种方式</p>
+        <h2 id="Annotation-注解"><a href="#Annotation-注解" class="headerlink" title="Annotation 注解"></a>Annotation 注解</h2><a id="more"></a>
+
+<h2 id="Refection-反射"><a href="#Refection-反射" class="headerlink" title="Refection 反射"></a>Refection 反射</h2><p> 获取类的Class 对象 三种方式</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//通过Class类加载 (推荐)</span></span><br><span class="line">Class aClass = Class.forName(<span class="string">&quot;com.alilemon.reject.User&quot;</span>);</span><br><span class="line"><span class="comment">//通过对象加载</span></span><br><span class="line">Class userClass = User.class;</span><br><span class="line"><span class="comment">//通过对象的引用加载</span></span><br><span class="line">User user = <span class="keyword">new</span> User();</span><br><span class="line">Class aClass1 = user.getClass();</span><br><span class="line"><span class="comment">//内置基本数据类型可以直接用类名.Type</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="类加载"><a href="#类加载" class="headerlink" title="类加载"></a>类加载</h2><p>类在加载过程</p>
